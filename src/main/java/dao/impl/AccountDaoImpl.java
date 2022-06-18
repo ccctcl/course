@@ -2,10 +2,15 @@ package dao.impl;
 
 import dao.AccountDao;
 import domain.Account;
+import org.apache.commons.dbutils.QueryRunner;
 
+import javax.management.Query;
 import java.util.List;
 
 public class AccountDaoImpl implements AccountDao {
+
+    private QueryRunner runner;
+
     @Override
     public List<Account> findAllAccount() {
         return null;
