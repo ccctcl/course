@@ -21,5 +21,9 @@
         <property name="password" value="${jdbc.password}"></property>
     </bean>
 
+    <bean id="accountService" class="service.impl.AccountServiceImpl">
+        <property name="accountDao" ref="accountDao"></property>
+    </bean>
+
 
 </beans>
