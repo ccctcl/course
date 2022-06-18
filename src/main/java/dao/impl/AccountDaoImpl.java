@@ -11,6 +11,10 @@ public class AccountDaoImpl implements AccountDao {
 
     private QueryRunner runner;
 
+    public void setRunner(QueryRunner runner) {
+        this.runner = runner;
+    }
+
     @Override
     public List<Account> findAllAccount() {
         return null;

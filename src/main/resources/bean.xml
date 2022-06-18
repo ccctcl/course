@@ -4,8 +4,11 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="accountDao" class="dao.impl.AccountDaoImpl" >
+        <property name="runner" ref="runner">
 
+        </property>
     </bean>
+
     <bean id="runner" class="org.apache.commons.dbutils.QueryRunner">
 
     </bean>
