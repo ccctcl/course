@@ -1,4 +1,4 @@
-package domain;
+package spring.domain;
 
 public class Account {
 

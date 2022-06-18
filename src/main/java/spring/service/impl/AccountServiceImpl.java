@@ -1,18 +1,18 @@
-package service.impl;
+package spring.service.impl;
 
-import dao.AccountDao;
-import domain.Account;
-import service.AccountService;
+import spring.dao.AccountDao;
+import spring.domain.Account;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import spring.service.AccountService;
 
 import java.util.List;
 
+@Service("accountService")
 public class AccountServiceImpl implements AccountService {
 
+    @Autowired
     private AccountDao accountDao;
-
-    public void setAccountDao(AccountDao accountDao) {
-        this.accountDao = accountDao;
-    }
 
     @Override
     public List<Account> findAllAccount() {

@@ -1,19 +1,26 @@
 package test;
 
-import domain.Account;
+import spring.config.SpringConfiguration;
+import spring.domain.Account;
 import org.junit.Test;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import service.AccountService;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import spring.service.AccountService;
 
 import java.util.List;
 
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes = SpringConfiguration.class)
 public class AccountTest {
+
+    @Autowired
+    private AccountService accountService;
+
 
     @Test
     public void testFindAll(){
-        ApplicationContext applicationContext= new ClassPathXmlApplicationContext("bean.xml");
-        AccountService accountService=applicationContext.getBean("accountService", AccountService.class);
         List<Account> allAccount=accountService.findAllAccount();
         for (Account account:allAccount) {
             System.out.println(account);
@@ -22,8 +29,6 @@ public class AccountTest {
 
     @Test
     public void testFindById(){
-        ApplicationContext applicationContext= new ClassPathXmlApplicationContext("bean.xml");
-        AccountService accountService=applicationContext.getBean("accountService", AccountService.class);
         Account account=accountService.findAccountById(177);
         System.out.println(account);
 
@@ -31,8 +36,6 @@ public class AccountTest {
 
     @Test
     public void testAdd(){
-        ApplicationContext applicationContext= new ClassPathXmlApplicationContext("bean.xml");
-        AccountService accountService=applicationContext.getBean("accountService", AccountService.class);
         Account account = new Account();
         account.setName("李达");
         account.setNameId(2019);
@@ -44,9 +47,7 @@ public class AccountTest {
 
     @Test
     public void testUpdate(){
-        ApplicationContext applicationContext= new ClassPathXmlApplicationContext("bean.xml");
-        AccountService accountService=applicationContext.getBean("accountService", AccountService.class);
-        Account account = accountService.findAccountById(181);
+        Account account = accountService.findAccountById(2019);
         account.setName("可达鸭");
         account.setNameId(17718);
         account.setMoney(888.88f);
@@ -58,9 +59,7 @@ public class AccountTest {
 
     @Test
     public void testDelete(){
-        ApplicationContext applicationContext= new ClassPathXmlApplicationContext("bean.xml");
-        AccountService accountService=applicationContext.getBean("accountService", AccountService.class);
-        accountService.deleteAccount(181);
+        accountService.deleteAccount(183);
         System.out.println();
     }
 

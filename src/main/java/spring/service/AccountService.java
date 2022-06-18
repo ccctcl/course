@@ -1,6 +1,6 @@
-package service;
+package spring.service;
 
-import domain.Account;
+import spring.domain.Account;
 
 import java.util.List;
 

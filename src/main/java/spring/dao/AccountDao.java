@@ -1,8 +1,7 @@
-package dao;
+package spring.dao;
 
-import domain.Account;
+import spring.domain.Account;
 
-import java.sql.SQLException;
 import java.util.List;
 
 public interface AccountDao {

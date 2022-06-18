@@ -1,21 +1,21 @@
-package dao.impl;
+package spring.dao.impl;
 
-import dao.AccountDao;
-import domain.Account;
+import spring.dao.AccountDao;
+import spring.domain.Account;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.sql.SQLException;
 import java.util.List;
 
+@Repository("accountDao")
 public class AccountDaoImpl implements AccountDao {
 
+    @Autowired
     private QueryRunner runner;
-
-    public void setRunner(QueryRunner runner) {
-        this.runner = runner;
-    }
 
     @Override
     public List<Account> findAllAccount() {
