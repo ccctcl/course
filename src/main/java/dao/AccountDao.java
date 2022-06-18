@@ -4,7 +4,7 @@ import domain.Account;
 
 import java.util.List;
 
-public interface Accountdao {
+public interface AccountDao {
 
 
     List<Account> findAllAccount();
