@@ -45,7 +45,7 @@ public class AccountDaoImpl implements AccountDao {
     public void saveAccount(Account account) {
 
         try {
-            runner.update("insert into bank set name=?,nameId=?,money=? where id=?",account.getName(),account.getNameId(),account.getMoney(),account.getId());
+            runner.update("insert into bank(name,nameId,money) values(?,?,?)",account.getName(),account.getNameId(),account.getMoney());
         } catch (SQLException e) {
             e.printStackTrace();
         }
