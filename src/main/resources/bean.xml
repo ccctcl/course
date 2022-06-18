@@ -10,10 +10,14 @@
     </bean>
 
     <bean id="runner" class="org.apache.commons.dbutils.QueryRunner">
+            <constructor-arg name="ds" ref="dataSource">
 
+            </constructor-arg>
     </bean>
 
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
 
+    </bean>
 
 
 </beans>
