@@ -4,7 +4,7 @@ public class Account {
 
     private Integer id;
     private String name;
-    private Integer nameid;
+    private Integer nameId;
     private Float money;
 
     public Integer getId() {
@@ -23,12 +23,12 @@ public class Account {
         this.name = name;
     }
 
-    public Integer getNameid() {
-        return nameid;
+    public void setNameId(Integer nameId) {
+        this.nameId = nameId;
     }
 
-    public void setNameid(Integer nameid) {
-        this.nameid = nameid;
+    public Integer getNameId() {
+        return nameId;
     }
 
     public Float getMoney() {
@@ -44,7 +44,7 @@ public class Account {
         return "Account{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", nameid=" + nameid +
+                ", nameId=" + nameId +
                 ", money=" + money +
                 '}';
     }

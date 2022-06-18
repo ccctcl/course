@@ -2,6 +2,7 @@ package dao;
 
 import domain.Account;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public interface AccountDao {
@@ -9,7 +10,7 @@ public interface AccountDao {
 
     List<Account> findAllAccount();
 
-    Account findAccountById();
+    Account findAccountById(Integer nameId);
 
     void saveAccount(Account account);
 
